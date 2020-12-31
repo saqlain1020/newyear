@@ -13,11 +13,11 @@ $(document).ready(function() {
                  $this.find('.number-hours').html(event.strftime('%H'));
                 $this.find('.number-minutes').html(event.strftime('%M'));
                 $this.find('.number-seconds').html(event.strftime('%S'));
-                if(event.strftime('%S')<50){
+                if(event.strftime('%M')<=0 && event.strftime('%S')<12){
                     console.log("object")
                     document.querySelector('.secs').classList.add("animation");
                 }
-                if(event.strftime('%S')<=0){
+                if(event.strftime('%M')<=0 && event.strftime('%S')<=0){
                     window.location.replace("fire/index.html")
                 }
             });
